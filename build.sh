@@ -1,3 +1,5 @@
+#!/bin/sh
+
 if [ "$BOOST_ROOT" = "" ]; then
   echo "Please set environment variable BOOST_ROOT to the location of Boost."
   exit -1

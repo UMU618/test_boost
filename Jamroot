@@ -15,7 +15,7 @@
 project test_boost
   : requirements
     <cxxstd>latest
-    <toolset>clang:<cxxstd>17
+      <toolset>clang:<cxxstd>17
     <link>static
     <optimization>speed
     <threading>multi

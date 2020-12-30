@@ -12,15 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if <toolset>clang {
-  CXXSTD = 17 ;
-} else {
-  CXXSTD = latest ;
-}
-
 project test_boost
   : requirements
-    <cxxstd>$(CXXSTD)
+    <cxxstd>latest
+    <toolset>clang:<cxxstd>17
     <link>static
     <optimization>speed
     <threading>multi

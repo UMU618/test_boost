@@ -1,4 +1,4 @@
-// clang -std=c++20 test.cpp -ldl -lstdc++ -lstdc++fs -lboost_program_options
+// clang -std=c++20 main.cpp -ldl -lstdc++ -lstdc++fs -lboost_program_options
 #include <filesystem>
 #include <iostream>
 #include <string>

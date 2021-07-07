@@ -5,7 +5,7 @@ lib dl ;
 lib stdc++fs ;
 lib boost_program_options ;
 
-project test
+project boost3
   : requirements
   <cxxstd>latest
     <target-os>linux:<library>dl
@@ -18,6 +18,6 @@ project test
   : build-dir ./bin
   ;
 
-exe test
-  : test.cpp
+exe boost3
+  : main.cpp
   ;

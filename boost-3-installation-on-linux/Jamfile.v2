@@ -1,0 +1,23 @@
+import os ;
+  BOOST_ROOT = [ os.environ BOOST_ROOT ] ;
+
+lib dl ;
+lib stdc++fs ;
+lib boost_program_options ;
+
+project test
+  : requirements
+  <cxxstd>latest
+    <target-os>linux:<library>dl
+    <target-os>linux:<library>stdc++fs
+    <target-os>linux:<library>boost_program_options
+    <target-os>windows:<include>$(BOOST_ROOT)
+    <target-os>windows:<library-path>$(BOOST_ROOT)/stage/lib
+  <threading>multi
+  : default-build release
+  : build-dir ./bin
+  ;
+
+exe test
+  : test.cpp
+  ;

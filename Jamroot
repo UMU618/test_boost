@@ -7,5 +7,5 @@ ECHO "My NORMALIZE_PATH is $(path)" ;
 path = [ path.native $(path) ] ;
 ECHO "My" [ os.name ] "native path is $(path)" ;
 
-build-project boost-0-b2 ;
-build-project boost-1-installation ;
+build-project 0-b2 ;
+build-project 1-boost_program_options ;

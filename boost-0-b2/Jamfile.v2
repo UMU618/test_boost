@@ -1,0 +1,4 @@
+ECHO "Project root:" $(PROJECT_ROOT) ;
+
+path-constant ME : . ;
+ECHO "Current Directory:" $(ME) ;

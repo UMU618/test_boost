@@ -1,0 +1,11 @@
+import os ;
+import path ;
+
+ECHO "I am $(__name__)" ;
+local path = [ path.join $(PROJECT_ROOT) $(__file__) ] ;
+ECHO "My NORMALIZE_PATH is $(path)" ;
+path = [ path.native $(path) ] ;
+ECHO "My" [ os.name ] "native path is $(path)" ;
+
+build-project boost-0-b2 ;
+build-project boost-1-installation ;

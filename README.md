@@ -6,12 +6,15 @@ On Windows
 
 ```
 .\build.cmd
+# b2 toolset=msvc
 ```
 
 On macOS, Debian
 
 ```
 ./build.sh
+# b2 toolset=clang
+# b2 toolset=gcc
 ```
 
 ## Expection

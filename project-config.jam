@@ -1,0 +1,38 @@
+# umu618.com
+path-constant PROJECT_ROOT : . ;
+local boost-version = 1.76 ;
+
+import os ;
+  BOOST_ROOT = [ os.environ BOOST_ROOT ] ;
+
+if [ os.name ] = LINUX {
+  if [ os.platform ] = ARM {
+    DEFAULT_INCLUDE_DIR = /usr/include/aarch64-linux-gnu ;
+    DEFAULT_LIB_DIR = /usr/lib/aarch64-linux-gnu ;
+  } else {
+    DEFAULT_INCLUDE_DIR = /usr/include ;
+    DEFAULT_LIB_DIR = /usr/lib ;
+  }
+} else if [ os.name ] = MACOSX {
+  if [ os.platform ] = ARM {
+    DEFAULT_INCLUDE_DIR = /opt/homebrew/include ;
+    DEFAULT_LIB_DIR = /opt/homebrew/lib ;
+  } else {
+    DEFAULT_INCLUDE_DIR = /usr/local/Homebrew/include ;
+    DEFAULT_LIB_DIR = /usr/local/Homebrew/lib ;
+  }
+} else if [ os.name ] = NT {
+  DEFAULT_INCLUDE_DIR = C:/dev/include ;
+  DEFAULT_LIB_DIR = C:/dev/lib ;
+
+  if ! $(BOOST_ROOT) {
+    EXIT You should set the BOOST_ROOT environment variable! ;
+  }
+}
+
+if $(BOOST_ROOT) {
+  ECHO Using the BOOST_ROOT environment variable ;
+  using boost : $(boost-version) : <root>$(BOOST_ROOT) ;
+} else {
+  using boost : $(boost-version) : <include>$(DEFAULT_INCLUDE_DIR) <library>$(DEFAULT_LIB_DIR) <layout>system ;
+}

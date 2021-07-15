@@ -8,4 +8,4 @@ path = [ path.native $(path) ] ;
 ECHO "My" [ os.name ] "native path is $(path)" ;
 
 build-project 0-b2 ;
-build-project 1-boost_program_options ;
+build-project 1-program_options ;

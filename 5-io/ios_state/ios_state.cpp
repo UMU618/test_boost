@@ -6,9 +6,7 @@ void PrintHex(std::ostream& os, char byte) {
   // Try commenting out the next line
   boost::io::ios_flags_saver ifs(os);
 
-  std::cout << byte << " = ";
-  os << std::hex << static_cast<unsigned>(byte);
-  std::cout << '\n';
+  os << byte << " = " << std::hex << static_cast<unsigned>(byte) << '\n';
 }
 
 int main() {

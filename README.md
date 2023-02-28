@@ -2,6 +2,10 @@
 
 ## Compile
 
+```
+git submodule update --init
+```
+
 On Windows
 
 ```
